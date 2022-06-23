@@ -1,0 +1,9 @@
+server:
+  port: 7021
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    appname: 博客消费者
