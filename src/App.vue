@@ -1,6 +1,6 @@
 <template>
   <div id="home" style="width: 100%;height: 100%;">
-    <Menu mode="horizontal" :theme="theme1" active-name="1">
+    <Menu mode="horizontal"  active-name="1">
       <Menu-item :active-name="$route.path" name="/" to="/">
         <Icon type="ios-paper"></Icon>
         个人主页
@@ -19,7 +19,7 @@
       </Menu-item>
       <Menu-item name="5">
         <Icon type="settings"></Icon>
-        商品购物
+        开放接口
       </Menu-item>
     </Menu>
     <router-view>
