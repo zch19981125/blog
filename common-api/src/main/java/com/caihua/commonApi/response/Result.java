@@ -1,5 +1,7 @@
 package com.caihua.commonApi.response;
 
+import lombok.Data;
+
 /**
  * //todo
  *
@@ -10,6 +12,7 @@ package com.caihua.commonApi.response;
  * @author zch
  * @since $
  */
+@Data
 public class Result {
 	public static final Integer SUCCESS_CODE = 200;
 	

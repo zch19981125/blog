@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.caihua.mapper.ProjectMapper">
+
+    <select id="pageList" resultType="com.caihua.commonApi.entity.dto.ProjectDto">
+        select *
+        from project p
+                 left join project_art pa on p.id = pa.project_id
+                 left join art a on pa.art_id = a.id
+        ${ew.customSqlSegment}
+    </select>
 </mapper>

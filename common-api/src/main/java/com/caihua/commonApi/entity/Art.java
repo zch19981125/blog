@@ -10,6 +10,4 @@ public class Art {
 	private String artName;
 	
 	private String studyUrl;
-	
-	private String artKey;
 }

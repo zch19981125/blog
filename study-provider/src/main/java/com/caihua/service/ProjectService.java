@@ -1,6 +1,12 @@
 package com.caihua.service;
 
+import com.baomidou.mybatisplus.core.conditions.AbstractWrapper;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.caihua.commonApi.entity.Project;
 import com.caihua.commonApi.entity.dto.ProjectDto;
@@ -27,6 +33,17 @@ public class ProjectService extends ServiceImpl<ProjectMapper, Project> {
 		}
 		return projectDtos;
 	}
-
-
+	
+	
+	/**
+	 * project 分页查询
+	 * @param page
+	 * @return
+	 */
+	public List<ProjectDto> pageList(Page page) {
+		
+		QueryWrapper<ProjectDto> queryWrapper = new QueryWrapper<>();
+		queryWrapper.eq("p.id",1);
+		return getBaseMapper().pageList(page,queryWrapper);
+	}
 }
