@@ -7,10 +7,8 @@
 
 <script>
 import VueTable from '../../common/VueTable'
-import {listPage} from '../../api/project-api'
-
 export default {
-  name: 'project-list',
+  name: 'art-list.vue',
   components: {VueTable},
   data () {
     return {
@@ -65,20 +63,6 @@ export default {
       },
       data: [],
       searchParam: {}
-    }
-  },
-  methods: {
-    handleSearch (page) {
-      if (!page) {
-        page = this.page
-      }
-      listPage(page, this.searchParam).then(res => {
-        if (res.data.code === 200) {
-          this.data = res.data.body
-        } else {
-          this.$Message.error(res.data.msg)
-        }
-      })
     }
   }
 }

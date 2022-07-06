@@ -13,14 +13,20 @@
         <Icon type="ios-people"></Icon>
         技术经验
       </Menu-item>
-      <Menu-item name="4">
-        <Icon type="settings"></Icon>
-        综合设置
-      </Menu-item>
-      <Menu-item name="5">
-        <Icon type="settings"></Icon>
-        开放接口
-      </Menu-item>
+      <Submenu name="1">
+        <template slot="title">
+          <Icon type="ios-paper"></Icon>
+          开放接口
+        </template>
+        <Menu-item :active-name="$route.path" name="wordToPdf" to="wordToPdf">
+          <Icon type="ios-people"></Icon>word转Pdf</Menu-item>
+        <Menu-item :active-name="$route.path" name="wechatPay" to="wechatPay">
+          <Icon type="ios-people"></Icon>微信支付</Menu-item>
+        <Menu-item :active-name="$route.path" name="videoPlayer" to="videoPlayer">
+          <Icon type="ios-people"></Icon>视频点播</Menu-item>
+        <Menu-item :active-name="$route.path" name="idCardDiscern" to="idCardDiscern">
+          <Icon type="ios-people"></Icon>身份证识别</Menu-item>
+      </Submenu>
     </Menu>
     <router-view>
     </router-view>
